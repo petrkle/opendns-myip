@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+# ABSTRACT: Get your public IP address
+# PODNAME: my-ip
+
+use strict;
+use warnings;
+
+use OpenDNS::MyIP qw(get_ip);
+
+print get_ip()."\n";
