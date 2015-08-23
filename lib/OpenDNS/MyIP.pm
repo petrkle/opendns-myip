@@ -50,15 +50,15 @@ __END__
 
 =head1 SEE ALSO
 
-https://metacpan.org/pod/WWW::IP
+L<https://metacpan.org/pod/WWW::IP>
 
-https://metacpan.org/pod/WWW::curlmyip
+L<https://metacpan.org/pod/WWW::curlmyip>
 
-https://metacpan.org/pod/WWW::ipinfo
+L<https://metacpan.org/pod/WWW::ipinfo>
 
-https://metacpan.org/pod/WWW::hmaip
+L<https://metacpan.org/pod/WWW::hmaip>
 
-https://metacpan.org/pod/WWW::PerlTricksIP
+L<https://metacpan.org/pod/WWW::PerlTricksIP>
 
 =cut
 1;
