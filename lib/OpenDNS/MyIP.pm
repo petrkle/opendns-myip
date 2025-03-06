@@ -18,31 +18,31 @@ our @EXPORT = qw(get_ip);
 
 =head1 SYNOPSIS
 
-	use OpenDNS::MyIP qw(get_ip);
-	
-	my $ip = get_ip(); # 12.34.56.78
+  use OpenDNS::MyIP qw(get_ip);
+
+  my $ip = get_ip(); # 12.34.56.78
 
 =method get_ip()
 
 Return public IP address
 =cut
 sub get_ip{
-	my $resolver = new Net::DNS::Resolver(
-			nameservers => [ '208.67.220.220', '208.67.222.222' ],
-			recurse     => 0,
-			debug       => 0
-			);
+  my $resolver = new Net::DNS::Resolver(
+      nameservers => [ '208.67.220.220', '208.67.222.222' ],
+      recurse     => 0,
+      debug       => 0
+      );
 
-	my $query = $resolver->query( 'myip.opendns.com' );
+  my $query = $resolver->query( 'myip.opendns.com' );
 
-	if ($query) {
-		foreach my $rr ($query->answer) {
-			next unless $rr->type eq "A";
-			return $rr->rdatastr;
-		}
-	} else {
-		confess($resolver->errorstring);
-	}
+  if ($query) {
+    foreach my $rr ($query->answer) {
+      next unless $rr->type eq "A";
+      return $rr->rdatastr;
+    }
+  } else {
+    confess($resolver->errorstring);
+  }
 }
 
 1;
