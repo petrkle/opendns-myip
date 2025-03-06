@@ -38,7 +38,7 @@ sub get_ip{
   if ($query) {
     foreach my $rr ($query->answer) {
       next unless $rr->type eq "A";
-      return $rr->rdatastr;
+      return $rr->rdstring();
     }
   } else {
     confess($resolver->errorstring);
